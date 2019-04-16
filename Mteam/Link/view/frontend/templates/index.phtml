@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @var \Mteam\Link\Block\Display $block
+ */
+$productInfo = $block->getProductInfo();
+
+ ?>
+ <!-- <style type="text/css">
+ 	*{
+ 		display: none;
+ 	}
+ </style> -->
+<div class="text-black" style="display: none;">
+
+<form data-role="tocart-form" action="<?=$productInfo['url']?>" method="post">
+	<?php echo $block->getBlockHtml('formkey')?>
+<input type='hidden' name="product_id" value="<?=$productInfo['productId']?>" />
+<input type='hidden' name="product" value="<?=$productInfo['productId']?>" />
+<input type="hidden" name="qty" id="qty" value="<?=$productInfo['quantity']?>" >
+	<button type="submit" id="add-to-cart" value="Add to cart">Add to cart</button>
+</form>
+</div>
+
+<script type="text/javascript">
+	require([
+    "jquery"
+], function($) {
+    "use strict";
+    $(document).ready(function() {
+    	$("#add-to-cart").click();
+    });
+});
+</script>
