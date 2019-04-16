@@ -12,3 +12,5 @@ php bin/magento indexer:reindex
 php bin/magento cache:flush
 php bin/magento cache:clean
 ```
+
+Link is: {your_site_link}/linkadd?productid={product_id}&qty={quantity}
